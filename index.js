@@ -1,6 +1,6 @@
+require('dotenv').config(); // Load environment variables from .env file
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config(); // Load environment variables from .env file
 const app = express()
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const port = process.env.PORT || 5000;
@@ -28,7 +28,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
     const recipeCollection = client.db("recipeDB").collection("recipes");
     const userCollection = client.db("recipeDB").collection("users");
